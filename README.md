@@ -19,9 +19,10 @@ Our twist on Bop It is called "Box It," a boxing-themed version of Bop It that i
      - Proximity sensor in the center checks if the user successfully dodged.
 
 - **Enclosure Features:**
-  - LED matrix display for visual cues.
+  - LED matrix display with animations for visual cues.
   - Two speakers for audible commands.
-  - Proximity and IR sensors for responsive detection.
+  - Proximity sensor for responsive precise detection.
+  - IR sensor for radial, inclusive detection
   - Limit switch for registering powerful punches.
 
 - **Scoring and Feedback:**
@@ -30,7 +31,7 @@ Our twist on Bop It is called "Box It," a boxing-themed version of Bop It that i
 
 <br>
 
-## Design Overview
+## Design Requirements
 
 ### Functional / Software Requirements
 
