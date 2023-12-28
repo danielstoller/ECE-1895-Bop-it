@@ -31,6 +31,11 @@ Our twist on Bop It is called "Box It," a boxing-themed version of Bop It that i
 
 <br>
 
+[![Watch the Video](https://img.youtube.com/vi/TcJYKmGF-bU/maxresdefault.jpg)](https://youtu.be/TcJYKmGF-bU)
+
+<br>
+
+
 ## Design Requirements
 
 ### Functional / Software Requirements
