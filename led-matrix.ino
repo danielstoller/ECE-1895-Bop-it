@@ -62,8 +62,10 @@ void loadingScreen(){
     delay(50);
   }
   
+  /*
   delay(1000);
   clear();
+  */
 }
 
 
@@ -125,15 +127,20 @@ void punchOut()
   delay(2000);
 }
 
+//This punches in and out once
+void showPunch(){
+  punchIn();
+  punchOut();
+}
+  
 
+//Displays start, then punches in and out once
+//For overall code, startScreen(), while(joystick==0) showPunch();
 void startScreen()
 {
   clear();
   showStart();
-  for(int i=0; i<20; i++){
-    punchIn();
-    punchOut();
-  }
+  showPunch();
 }
 
 
@@ -239,8 +246,9 @@ void showDodge(){
   //**
 }
 
+//Arrows go in and out once
 void dodgeArrows(){
-  for(int i=1; i<8; i++){
+  for(int i=1; i<3; i++){
     if(i%2){  //Extended
       lc.setColumn(3, 0, B01000010);
       lc.setColumn(3, 1, B10100101);
@@ -262,10 +270,13 @@ void dodgeArrows(){
   }
 }
 
-void dodgeScreen(){
+//Will show the word dodge and arrows will go in and out n times
+void dodgeScreen(int n){
   clear();
   showDodge();
-  dodgeArrows();
+  for(int i=0; i<n; i++){
+    dodgeArrows();
+  }
 }
 
 
@@ -306,7 +317,9 @@ void showPunch(){
   }
 }
 
-void explosion(){
+//The speed can be a number between 1 and 5
+//1 is the fastest, 5 is the slowest
+void explosion(int speed){
   for(int i=0; i<7; i++){
     if(i%7 == 0){  //Extended
       lc.setColumn(3, 0, B00000000);
@@ -319,14 +332,14 @@ void explosion(){
       lc.setColumn(0, 5, B00000000);
       lc.setColumn(0, 6, B00000000);
       lc.setColumn(0, 7, B00000000);
-      delay(80);
+      delay(speed*20);
     }
     else if(i%7 == 1){   //Retracted
       lc.setColumn(3, 3, B00011000);
       lc.setColumn(3, 4, B00100100);
       lc.setColumn(0, 4, B00011000);
       lc.setColumn(0, 3, B00100100);
-      delay(80);
+      delay(speed*20);
     }
     else if(i%7 == 2){   //Retracted
       lc.setColumn(3, 2, B00011000);
@@ -335,7 +348,7 @@ void explosion(){
       lc.setColumn(0, 5, B00011000);
       lc.setColumn(0, 4, B00100100);
       lc.setColumn(0, 3, B01000010);
-      delay(80);
+      delay(speed*20);
     }
     else if(i%7 == 3){   //Retracted
       lc.setColumn(3, 1, B00011000);
@@ -346,7 +359,7 @@ void explosion(){
       lc.setColumn(0, 5, B00100100);
       lc.setColumn(0, 4, B01000010);
       lc.setColumn(0, 3, B10000001);
-      delay(80);
+      delay(speed*20);
     }
     else if(i%7 == 4){   //Retracted
       lc.setColumn(3, 0, B00011000);
@@ -359,7 +372,7 @@ void explosion(){
       lc.setColumn(0, 5, B01000010);
       lc.setColumn(0, 4, B10000001);
       lc.setColumn(0, 3, B00000000);
-      delay(80);
+      delay(speed*20);
     }
     else if(i%7 == 5){   //Retracted
       lc.setColumn(3, 0, B00100100);
@@ -370,7 +383,7 @@ void explosion(){
       lc.setColumn(0, 6, B01000010);
       lc.setColumn(0, 5, B10000001);
       lc.setColumn(0, 4, B00000000);
-      delay(80);
+      delay(speed*20);
     }
     else if(i%7 == 6){   //Retracted
       lc.setColumn(3, 0, B01000010);
@@ -379,17 +392,17 @@ void explosion(){
       lc.setColumn(0, 7, B01000010);
       lc.setColumn(0, 6, B10000001);
       lc.setColumn(0, 5, B00000000);
-      delay(200);
+      delay(speed*40);
     }
   }
 }
 
 
-void punchScreen(){
+void punchScreen(int n, int speed){
   clear();
   showPunch();
-  explosion();
-  explosion();
+  for(int i=0; i<n; i++)
+    explosion(speed);
 }
 
 
@@ -454,13 +467,14 @@ byte flyingMan2[] =
 };
 
 
-void flyingKick(){
+//Speed can be between 1 and 5 with 5 being the slowest
+void flyingKick(int speed){
   
   //Standing man
   for(int i=19; i<22; i++){
     lc.setColumn(3-i/8, i%8, man[i-19]);
   }
-  delay(180);
+  delay(120+30*speed);
 
   //Leg up
   //Clear previous line
@@ -469,7 +483,7 @@ void flyingKick(){
     lc.setColumn(3-i/8, i%8, flyingMan1[i-20]);
   }
 
-  delay(150);
+  delay(100+30*speed);
 
   //Flying kick
   for(int i=0; i<5; i++){
@@ -478,7 +492,7 @@ void flyingKick(){
     for(int j=21; j<27; j++){
       lc.setColumn(3-(j+i)/8, (j+i)%8, flyingMan2[j-21]);
     }
-    delay(100);
+    delay(60+30*speed);
   }
 
   //Leg up
@@ -488,7 +502,7 @@ void flyingKick(){
     lc.setColumn(3-i/8, i%8, flyingMan1[i-27]);
   }
   lc.setColumn(0, 6, B00000000);
-  delay(150);
+  delay(100+30*speed);
 
   //Standing man
   lc.setColumn(0, 2, B00000000);
@@ -497,7 +511,7 @@ void flyingKick(){
     lc.setColumn(3-i/8, i%8, man[i-28]);
   }
 
-  delay(250);
+  delay(170+30*speed);
   
   //Clear man
   for(int i=27; i<31; i++){
