@@ -2,7 +2,7 @@
 
 ## Objective
 
-In our Junior Design class, we were tasked with creating a unique variation of the classic game Bop-It. The challenge included designing a game with three distinct actions, integrating both functional and hardware requirements. Box It offers a unique and physically engaging experience, turning a traditional punching bag into an interactive gaming device. Its combination of responsive sensors, intuitive actions, and immediate feedback makes it an exciting addition to both gaming and fitness routines. The primary objectives were to provide an engaging user experience, encourage physical activity, and incorporate responsive and intuitive decision making to help boxers sharpen their reaciton time.
+In our Junior Design class, my two teammates and I were tasked with creating a unique variation of the classic game Bop-It. The challenge included designing a game with three distinct actions, integrating both functional and hardware requirements. Box It offers a unique and physically engaging experience, turning a traditional punching bag into an interactive gaming device. Its combination of responsive sensors, intuitive actions, and immediate feedback makes it an exciting addition to both gaming and fitness routines. The primary objectives were to provide an engaging user experience, encourage physical activity, and incorporate responsive and intuitive decision making to help boxers sharpen their reaciton time.
 
 <br>
 
@@ -68,3 +68,15 @@ Our twist on Bop It is called "Box It," a boxing-themed version of Bop It that i
   - Three audible outputs for command specification.
   - Visual confirmation for successful and unsuccessful attempts.
   - Score notification at the end of each round.
+ 
+<br>
+
+## Responsibilities
+- **Myself:**
+    - Enclosure design, modeling, printing and assembly
+    - LED Matrix animations
+- **Tyler:**
+    - PCB design and assembly
+    - Component integration
+- **Keegan:**
+    - Game design and software
