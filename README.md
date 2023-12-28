@@ -29,8 +29,8 @@ Our twist on Bop It is called "Box It," a boxing-themed version of Bop It that i
   - Successful actions earn points, challenging users with decreasing time intervals.
   - Visual cues indicate success or failure, and the game ends after 99 successful attempts.
 
-<br>
 
+## Youtube Demonstration:
 [![Watch the Video](https://img.youtube.com/vi/TcJYKmGF-bU/maxresdefault.jpg)](https://youtu.be/TcJYKmGF-bU)
 
 <br>
